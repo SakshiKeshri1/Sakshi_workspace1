@@ -1,15 +1,31 @@
-//SPDX-License-Identifier: UNLICENSED
+// SPDX-License-Identifier: MIT
 
-pragma solidity 0.8.9;
+pragma solidity ^0.8.9;
 
-contract Store {
-    uint value;
+//declaration of 4 variables in firstchallenge
+contract PurchasingItem {
+    uint orderId;
+    uint amt;
+    string name;
+    string public Itemname;
 
-    function retrieve() external view returns(uint) {
-        return value;
+    function setItemPurchased(uint _orderId, uint _amt, string  memory _name, string memory _Itemname) public returns (bool) {
+        orderId = _orderId;
+        amt = _amt;
+        name = _name;
+        Itemname = _Itemname;
+        return true;
     }
-
-    constructor(uint  _value) {
-        value = _value;
+    function getorderId() public view returns(uint) {
+        return orderId;
     }
+    function getamt() public view returns(uint) {
+        return amt;
+    }
+    function getname() public view returns(string memory) {
+        return name;
+    }
+    function getItemname() public view returns(string memory) {
+        return Itemname;
+}
 }
