@@ -1,0 +1,15 @@
+//SPDX-License-Identifier: UNLICENSED
+
+pragma solidity 0.8.9;
+
+contract Store {
+    uint value;
+
+    function retrieve() external view returns(uint) {
+        return value;
+    }
+
+    constructor(uint  _value) {
+        value = _value;
+    }
+}
